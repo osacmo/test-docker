@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   mysqldb:
-    image: mysql
+    image: mysql:latest
+    container_name: mysql-db
     restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=secret
@@ -21,7 +22,6 @@ services:
     restart: unless-stopped
     ports:
       - "3000:3000"
-    network_mode: "host"
     stdin_open: true
     tty: true
 

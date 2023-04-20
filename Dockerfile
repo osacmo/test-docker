@@ -4,7 +4,7 @@ RUN mkdir -p /home/app
 
 COPY . /home/app
 
-COPY example.sql /docker-entrypoint-initdb.d/initdb.sql
+COPY example.sql /docker-entrypoint-initdb.d/example.sql
 
 EXPOSE 3000
 
