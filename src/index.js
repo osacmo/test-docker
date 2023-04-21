@@ -11,20 +11,19 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   console.log('The solution is: ', results[0].solution);
 });
 
-/* app.get('/create', (req, res) => {
+app.get('/create', (req, res) => {
   const randomName = uniqueNamesGenerator({ dictionaries: [names] });
-  connection.query(`INSERT INTO usuario(id, nombre) VALUES(null, ${randomName})`, function (error, results, fields) {
+  connection.query(`INSERT INTO usuario(id, nombre) VALUES(null, '${randomName}')`, function (error, results, fields) {
     if (error) throw error;
     res.send({ msg: "User created." })
   });
-}); */
+});
+//gg
 
 app.get('/users', (req, res) => {
-
   connection.query(`SELECT * from usuario`, function (error, results, fields) {
     if (error) throw error;
-    console.log(results);
-    res.send({ msg: ok })
+    res.send(results)
   });
 });
 
